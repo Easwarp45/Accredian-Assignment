@@ -1,0 +1,6 @@
+{
+  "name": "Accredian Enterprise Landing Page",
+  "description": "Production-ready Accredian Enterprise learning & upskilling landing page featuring interactive programs, ROI calculator, demo booking, testimonials, and API integrations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

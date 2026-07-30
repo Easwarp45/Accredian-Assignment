@@ -1,0 +1,62 @@
+### Health Check API
+GET http://localhost:3000/api/health
+
+### Get Enterprise Features
+GET http://localhost:3000/api/features
+
+### Get All Enterprise Programs
+GET http://localhost:3000/api/programs
+
+### Filter Programs by Category (Data & AI)
+GET http://localhost:3000/api/programs?category=data-ai
+
+### Get Testimonials
+GET http://localhost:3000/api/testimonials
+
+### Get All FAQs
+GET http://localhost:3000/api/faqs
+
+### Search FAQs
+GET http://localhost:3000/api/faqs?q=pricing
+
+### Get Statistics
+GET http://localhost:3000/api/statistics
+
+### Submit Contact Form
+POST http://localhost:3000/api/contact
+Content-Type: application/json
+
+{
+  "fullName": "Sarah Jenkins",
+  "workEmail": "sarah.j@acmetech.com",
+  "companyName": "Acme Enterprise",
+  "phone": "+1 (555) 019-2834",
+  "teamSize": "50-200",
+  "interestedProgram": "Enterprise Executive AI Transformation",
+  "message": "We would like to train 100 senior software leads in agentic AI."
+}
+
+### Submit Demo Request
+POST http://localhost:3000/api/demo-request
+Content-Type: application/json
+
+{
+  "fullName": "Robert Vance",
+  "workEmail": "rvance@vancerefrigeration.com",
+  "companyName": "Vance Enterprise",
+  "phone": "+1 (555) 948-1029",
+  "designation": "Chief Technology Officer",
+  "organizationSize": "200-1000",
+  "preferredDate": "2026-08-15",
+  "message": "Requesting a customized executive briefing for our leadership team."
+}
+
+### Calculate ROI
+POST http://localhost:3000/api/roi-calculate
+Content-Type: application/json
+
+{
+  "teamSize": 150,
+  "avgSalary": 120000,
+  "turnoverRate": 12
+}
