@@ -50,7 +50,7 @@ export const ROICalculator: React.FC<ROICalculatorProps> = ({
   };
 
   return (
-    <Card padding="xl" className="border-2 border-blue-100 dark:border-slate-800 shadow-xl bg-gradient-to-br from-white via-blue-50/20 to-white dark:from-slate-900 dark:via-slate-905/30 dark:to-slate-900">
+    <Card padding="none" className="p-4 sm:p-8 md:p-10 border-2 border-blue-100 dark:border-slate-800 shadow-xl bg-gradient-to-br from-white via-blue-50/20 to-white dark:from-slate-900 dark:via-slate-905/30 dark:to-slate-900">
       <div className="flex items-center gap-3 mb-6">
         <div className="p-3 bg-blue-600 text-white rounded-xl shadow-md">
           <Calculator className="w-6 h-6" />
@@ -151,7 +151,7 @@ export const ROICalculator: React.FC<ROICalculatorProps> = ({
         </div>
 
         {/* Calculated Results Summary Box */}
-        <div className="lg:col-span-5 bg-slate-900 dark:bg-slate-950 text-white p-6 rounded-2xl shadow-2xl relative overflow-hidden border dark:border-slate-800">
+        <div className="lg:col-span-5 bg-slate-900 dark:bg-slate-950 text-white p-4 sm:p-6 rounded-2xl shadow-2xl relative overflow-hidden border dark:border-slate-800">
           <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/20 rounded-full blur-2xl" />
 
           <p className="text-xs uppercase font-bold tracking-widest text-blue-400 mb-1">
