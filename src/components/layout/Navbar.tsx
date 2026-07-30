@@ -2,20 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '../ui/Button';
 import { Menu, X, GraduationCap, ChevronRight, PhoneCall } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ThemeToggle, Theme } from '../common/ThemeToggle';
 
 interface NavbarProps {
   onBookDemo: () => void;
   onSelectSection: (id: string) => void;
-  currentTheme: Theme;
-  onThemeChange: (theme: Theme) => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   onBookDemo,
   onSelectSection,
-  currentTheme,
-  onThemeChange
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -115,8 +110,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span>Sales: +1 (800) 555-0199</span>
           </a>
 
-          <ThemeToggle currentTheme={currentTheme} onThemeChange={onThemeChange} />
-
           <button
             onClick={onBookDemo}
             className="bg-[#2563EB] text-white px-6 py-2 rounded-lg font-semibold text-sm hover:bg-[#1D4ED8] transition-all shadow-md active:scale-95 cursor-pointer"
@@ -127,8 +120,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Mobile Hamburger Toggle */}
         <div className="lg:hidden flex items-center gap-2">
-          <ThemeToggle currentTheme={currentTheme} onThemeChange={onThemeChange} />
-
           <Button variant="primary" size="sm" onClick={onBookDemo}>
             Demo
           </Button>
