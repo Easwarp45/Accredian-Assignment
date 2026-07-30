@@ -17,15 +17,15 @@ export const Features: React.FC<FeaturesProps> = ({ onSelectFeature }) => {
     : ENTERPRISE_FEATURES.filter(f => f.category === activeTab);
 
   return (
-    <Section id="benefits" bgColor="bg-white" padding="py-20 md:py-28">
+    <Section id="benefits" bgColor="bg-white dark:bg-slate-950" padding="py-20 md:py-28">
       <div className="text-center max-w-3xl mx-auto mb-12">
         <Badge variant="blue" size="sm" className="mb-3">
           Built for Enterprise Excellence
         </Badge>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
           Enterprise Benefits Designed for Impact
         </h2>
-        <p className="text-slate-600 mt-4 text-lg">
+        <p className="text-slate-600 dark:text-slate-400 mt-4 text-lg">
           Accredian bridges the gap between organizational tech roadmaps and workforce capability through automated learning pathways.
         </p>
 
@@ -43,7 +43,7 @@ export const Features: React.FC<FeaturesProps> = ({ onSelectFeature }) => {
               className={`px-5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                 activeTab === tab.id
                   ? 'bg-blue-600 text-white shadow-md'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  : 'bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-350 hover:bg-slate-200 dark:hover:bg-slate-800'
               }`}
             >
               {tab.label}

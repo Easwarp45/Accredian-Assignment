@@ -29,15 +29,15 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onBookDemo }) => {
   };
 
   return (
-    <Section id="faq" bgColor="bg-white" padding="py-20 md:py-28">
+    <Section id="faq" bgColor="bg-white dark:bg-slate-950" padding="py-20 md:py-28">
       <div className="text-center max-w-3xl mx-auto mb-12">
         <Badge variant="blue" size="sm" className="mb-3">
           Got Questions?
         </Badge>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
           Frequently Asked Questions
         </h2>
-        <p className="text-slate-600 mt-4 text-lg">
+        <p className="text-slate-600 dark:text-slate-400 mt-4 text-lg">
           Everything you need to know about Accredian enterprise licensing, onboarding, and customized curricula.
         </p>
 
@@ -50,7 +50,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onBookDemo }) => {
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search questions (e.g., pricing, SSO, certifications)..."
             aria-label="Search frequently asked questions"
-            className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full pl-12 pr-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-sm dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
@@ -63,7 +63,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onBookDemo }) => {
               className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
                 selectedCategory === cat
                   ? 'bg-blue-600 text-white shadow-sm'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  : 'bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-350 hover:bg-slate-200 dark:hover:bg-slate-800'
               }`}
             >
               {cat}
@@ -83,21 +83,21 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onBookDemo }) => {
         ))}
 
         {filteredItems.length === 0 && (
-          <p className="text-center text-slate-500 py-8 text-sm">
+          <p className="text-center text-slate-500 dark:text-slate-450 py-8 text-sm">
             No matching questions found. Feel free to contact our enterprise advisors directly!
           </p>
         )}
       </div>
 
       {/* Still Have Questions Box */}
-      <div className="max-w-3xl mx-auto mt-12 bg-blue-50 p-6 sm:p-8 rounded-2xl border border-blue-100 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div className="max-w-3xl mx-auto mt-12 bg-blue-50 dark:bg-blue-950/10 p-6 sm:p-8 rounded-2xl border border-blue-100 dark:border-blue-900/40 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-4 text-left">
           <div className="p-3 bg-blue-600 text-white rounded-xl shadow-md shrink-0">
             <MessageSquare className="w-6 h-6" />
           </div>
           <div>
-            <h4 className="font-bold text-slate-900 text-lg">Still have unanswered questions?</h4>
-            <p className="text-sm text-slate-600 mt-0.5">
+            <h4 className="font-bold text-slate-900 dark:text-white text-lg">Still have unanswered questions?</h4>
+            <p className="text-sm text-slate-600 dark:text-slate-400 mt-0.5">
               Speak directly with an Accredian Enterprise Director today.
             </p>
           </div>

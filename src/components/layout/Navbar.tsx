@@ -2,13 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '../ui/Button';
 import { Menu, X, GraduationCap, ChevronRight, PhoneCall } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { ThemeToggle, Theme } from '../common/ThemeToggle';
 
 interface NavbarProps {
   onBookDemo: () => void;
   onSelectSection: (id: string) => void;
+  currentTheme: Theme;
+  onThemeChange: (theme: Theme) => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onBookDemo, onSelectSection }) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  onBookDemo,
+  onSelectSection,
+  currentTheme,
+  onThemeChange
+}) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -60,8 +68,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookDemo, onSelectSection }) =
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm py-2.5'
-          : 'bg-white border-b border-gray-200 py-3.5'
+          ? 'bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-gray-200 dark:border-slate-900 shadow-sm py-2.5'
+          : 'bg-white dark:bg-slate-950 border-b border-gray-200 dark:border-slate-900 py-3.5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-12">
@@ -74,7 +82,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookDemo, onSelectSection }) =
             A
           </div>
           <div>
-            <span className="text-2xl font-bold tracking-tight text-[#001F3F] block leading-none">
+            <span className="text-2xl font-bold tracking-tight text-[#001F3F] dark:text-white block leading-none">
               Accredian
             </span>
           </div>
@@ -88,8 +96,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookDemo, onSelectSection }) =
               onClick={() => handleNavClick(link.id)}
               className={`text-sm font-medium transition-colors cursor-pointer ${
                 activeSection === link.id
-                  ? 'text-blue-600 border-b-2 border-blue-600 pb-1 font-semibold'
-                  : 'text-gray-600 hover:text-blue-600'
+                  ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400 pb-1 font-semibold'
+                  : 'text-gray-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400'
               }`}
             >
               {link.label}
@@ -101,11 +109,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookDemo, onSelectSection }) =
         <div className="hidden lg:flex items-center gap-4">
           <a
             href="tel:+18005550199"
-            className="flex items-center gap-1.5 text-xs font-semibold text-gray-600 hover:text-blue-600 px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors"
+            className="flex items-center gap-1.5 text-xs font-semibold text-gray-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-1.5 rounded-lg hover:bg-gray-50 dark:hover:bg-slate-900 transition-colors"
           >
             <PhoneCall className="w-3.5 h-3.5 text-blue-600" />
             <span>Sales: +1 (800) 555-0199</span>
           </a>
+
+          <ThemeToggle currentTheme={currentTheme} onThemeChange={onThemeChange} />
 
           <button
             onClick={onBookDemo}
@@ -117,13 +127,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookDemo, onSelectSection }) =
 
         {/* Mobile Hamburger Toggle */}
         <div className="lg:hidden flex items-center gap-2">
+          <ThemeToggle currentTheme={currentTheme} onThemeChange={onThemeChange} />
+
           <Button variant="primary" size="sm" onClick={onBookDemo}>
             Demo
           </Button>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 text-slate-700 hover:text-blue-600 hover:bg-slate-100 rounded-lg transition-colors focus:outline-none"
+            className="p-2.5 text-slate-700 dark:text-slate-300 hover:text-blue-600 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-colors focus:outline-none"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -139,7 +151,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookDemo, onSelectSection }) =
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="lg:hidden bg-white border-b border-slate-200 shadow-xl overflow-hidden"
+            className="lg:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden"
           >
             <div className="px-6 py-6 space-y-2">
               {navLinks.map((link) => (
@@ -148,8 +160,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookDemo, onSelectSection }) =
                   onClick={() => handleNavClick(link.id)}
                   className={`w-full text-left px-4 py-3 text-base font-semibold rounded-lg flex items-center justify-between ${
                     activeSection === link.id
-                      ? 'text-blue-600 bg-blue-50 font-bold'
-                      : 'text-slate-700 hover:bg-slate-50'
+                      ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/40 font-bold'
+                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-850'
                   }`}
                 >
                   <span>{link.label}</span>
@@ -157,7 +169,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookDemo, onSelectSection }) =
                 </button>
               ))}
 
-              <div className="pt-4 mt-2 border-t border-slate-100 space-y-3">
+              <div className="pt-4 mt-2 border-t border-slate-100 dark:border-slate-800 space-y-3">
                 <Button variant="primary" size="lg" fullWidth onClick={() => { setMobileMenuOpen(false); onBookDemo(); }}>
                   Book a Personalized Demo
                 </Button>

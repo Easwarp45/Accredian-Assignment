@@ -9,7 +9,7 @@ interface CTAProps {
 
 export const CTA: React.FC<CTAProps> = ({ onBookDemo }) => {
   return (
-    <section className="relative py-20 md:py-28 bg-gradient-to-br from-blue-700 via-blue-600 to-blue-900 text-white overflow-hidden">
+    <section className="relative py-20 md:py-28 bg-gradient-to-br from-blue-700 via-blue-600 to-blue-900 dark:from-slate-900 dark:via-blue-950 dark:to-slate-950 text-white overflow-hidden">
       {/* Background Glows */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none" />

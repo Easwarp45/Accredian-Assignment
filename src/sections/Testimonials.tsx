@@ -14,15 +14,15 @@ export const Testimonials: React.FC = () => {
     : TESTIMONIALS.filter(t => t.category === selectedCategory);
 
   return (
-    <Section id="testimonials" bgColor="bg-slate-50" padding="py-20 md:py-28">
+    <Section id="testimonials" bgColor="bg-slate-50 dark:bg-slate-900/40" padding="py-20 md:py-28">
       <div className="text-center max-w-3xl mx-auto mb-12">
         <Badge variant="blue" size="sm" className="mb-3">
           Customer Success
         </Badge>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
           What Enterprise Leaders Say
         </h2>
-        <p className="text-slate-600 mt-4 text-lg">
+        <p className="text-slate-600 dark:text-slate-400 mt-4 text-lg">
           See how leading CTOs, VPs of L&D, and HR directors scale engineering capability with Accredian.
         </p>
 
@@ -35,7 +35,7 @@ export const Testimonials: React.FC = () => {
               className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
                 selectedCategory === cat
                   ? 'bg-blue-600 text-white shadow-sm'
-                  : 'bg-white text-slate-600 hover:bg-slate-200 border border-slate-200'
+                  : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-350 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
               }`}
             >
               {cat}

@@ -24,9 +24,9 @@ export const Card: React.FC<CardProps> = ({
       whileHover={hover ? { y: -4, transition: { duration: 0.2 } } : undefined}
       onClick={onClick}
       className={cn(
-        'bg-white rounded-xl shadow-md transition-all duration-300 ease-in-out',
-        border ? 'border border-slate-100' : '',
-        hover ? 'hover:shadow-xl hover:border-blue-100 cursor-pointer' : '',
+        'bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-xl shadow-md transition-all duration-300 ease-in-out',
+        border ? 'border border-slate-100 dark:border-slate-800' : '',
+        hover ? 'hover:shadow-xl hover:border-blue-100 dark:hover:border-slate-700 cursor-pointer' : '',
         paddingClasses[padding],
         className
       )}

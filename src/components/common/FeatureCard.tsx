@@ -37,10 +37,10 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({ feature, onSelect }) =
   };
 
   return (
-    <Card className="h-full flex flex-col justify-between group hover:border-blue-300">
+    <Card className="h-full flex flex-col justify-between group hover:border-blue-300 dark:hover:border-blue-800">
       <div>
         <div className="flex items-center justify-between mb-5">
-          <div className="p-3.5 rounded-xl bg-blue-50 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 inline-flex items-center justify-center">
+          <div className="p-3.5 rounded-xl bg-blue-50 dark:bg-blue-950/40 group-hover:bg-blue-600 dark:group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 inline-flex items-center justify-center">
             {renderIcon(feature.icon)}
           </div>
           {feature.badge && (
@@ -50,17 +50,17 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({ feature, onSelect }) =
           )}
         </div>
 
-        <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+        <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
           {feature.title}
         </h3>
 
-        <p className="text-slate-600 mt-3 text-sm leading-relaxed">
+        <p className="text-slate-600 dark:text-slate-400 mt-3 text-sm leading-relaxed">
           {feature.description}
         </p>
       </div>
 
       {feature.linkText && (
-        <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-sm font-semibold text-blue-600 group-hover:text-blue-700">
+        <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-350">
           <button
             onClick={() => onSelect && onSelect(feature)}
             className="inline-flex items-center gap-2 hover:underline focus:outline-none"

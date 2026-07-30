@@ -33,9 +33,9 @@ export const Toast: React.FC<ToastProps> = ({
   };
 
   const borderColors = {
-    success: 'border-emerald-200 bg-white text-slate-800',
-    error: 'border-rose-200 bg-white text-slate-800',
-    info: 'border-blue-200 bg-white text-slate-800',
+    success: 'border-emerald-200 dark:border-emerald-900/40 bg-white dark:bg-slate-950/20 text-slate-800 dark:text-slate-100',
+    error: 'border-rose-200 dark:border-rose-900/40 bg-white dark:bg-slate-950/20 text-slate-800 dark:text-slate-100',
+    info: 'border-blue-200 dark:border-blue-900/40 bg-white dark:bg-slate-950/20 text-slate-800 dark:text-slate-100',
   };
 
   return (
@@ -45,16 +45,16 @@ export const Toast: React.FC<ToastProps> = ({
           initial={{ opacity: 0, y: 50, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 20, scale: 0.95 }}
-          className="fixed bottom-6 right-6 z-50 max-w-md w-full shadow-2xl rounded-xl p-4 border flex items-center gap-3"
+          className="fixed bottom-6 right-6 z-50 max-w-md w-full bg-white dark:bg-slate-900 shadow-2xl rounded-xl p-4 border border-slate-100 dark:border-slate-800 flex items-center gap-3"
           style={{ backdropFilter: 'blur(8px)' }}
         >
-          <div className={`p-1.5 rounded-lg ${borderColors[type]}`}>
+          <div className={`p-1.5 rounded-lg border ${borderColors[type]}`}>
             {icons[type]}
           </div>
-          <p className="text-sm font-medium text-slate-800 flex-1">{message}</p>
+          <p className="text-sm font-medium text-slate-800 dark:text-slate-200 flex-1">{message}</p>
           <button
             onClick={onClose}
-            className="p-1 rounded-md text-slate-400 hover:text-slate-600 transition-colors"
+            className="p-1 rounded-md text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
           >
             <X className="w-4 h-4" />
           </button>

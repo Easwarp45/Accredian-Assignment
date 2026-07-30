@@ -37,15 +37,15 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({
   });
 
   return (
-    <Section id="programs" bgColor="bg-slate-50" padding="py-20 md:py-28">
+    <Section id="programs" bgColor="bg-slate-50 dark:bg-slate-900/40" padding="py-20 md:py-28">
       <div className="text-center max-w-3xl mx-auto mb-10">
         <Badge variant="blue" size="sm" className="mb-3">
           150+ Enterprise Cohorts
         </Badge>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
           Enterprise Learning Programs
         </h2>
-        <p className="text-slate-600 mt-4 text-lg">
+        <p className="text-slate-600 dark:text-slate-400 mt-4 text-lg">
           Curated hands-on curricula taught by industry tech directors and designed for rapid skill acquisition.
         </p>
       </div>
@@ -61,7 +61,7 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search by skill (e.g., GenAI, Kubernetes, MLOps, Microservices)..."
             aria-label="Search learning programs by skill"
-            className="w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-xl shadow-sm text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full pl-12 pr-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-sm text-sm dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
@@ -74,7 +74,7 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                 selectedCategory === cat.id
                   ? 'bg-blue-600 text-white shadow-md'
-                  : 'bg-white text-slate-600 hover:bg-slate-200 border border-slate-200'
+                  : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-350 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
               }`}
             >
               {cat.label}
@@ -86,7 +86,7 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({
       {/* Program Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredPrograms.map((program) => (
-          <Card key={program.id} className="h-full flex flex-col justify-between group hover:border-blue-300">
+          <Card key={program.id} className="h-full flex flex-col justify-between group hover:border-blue-300 dark:hover:border-blue-800">
             <div>
               <div className="flex items-center justify-between mb-3">
                 <Badge variant="blue" size="sm">
@@ -97,11 +97,11 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({
                 </Badge>
               </div>
 
-              <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2 min-h-[56px]">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2 min-h-[56px]">
                 {program.title}
               </h3>
 
-              <p className="text-slate-600 text-sm mt-3 leading-relaxed line-clamp-3">
+              <p className="text-slate-600 dark:text-slate-400 text-sm mt-3 leading-relaxed line-clamp-3">
                 {program.description}
               </p>
 
@@ -110,7 +110,7 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({
                 {program.skillsCovered.slice(0, 4).map((skill, idx) => (
                   <span
                     key={idx}
-                    className="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md"
+                    className="text-[11px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2.5 py-1 rounded-md"
                   >
                     {skill}
                   </span>
@@ -118,8 +118,8 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({
               </div>
             </div>
 
-            <div className="pt-6 mt-6 border-t border-slate-100 space-y-4">
-              <div className="flex items-center justify-between text-xs text-slate-500 font-medium">
+            <div className="pt-6 mt-6 border-t border-slate-100 dark:border-slate-800 space-y-4">
+              <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium">
                 <div className="flex items-center gap-1.5">
                   <Clock className="w-4 h-4 text-blue-600" />
                   <span>{program.duration}</span>
@@ -155,10 +155,10 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({
       </div>
 
       {filteredPrograms.length === 0 && (
-        <div className="text-center py-12 bg-white rounded-2xl border border-slate-200">
+        <div className="text-center py-12 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800">
           <Layers className="w-12 h-12 text-slate-300 mx-auto mb-3" />
-          <h3 className="text-lg font-bold text-slate-800">No matching programs found</h3>
-          <p className="text-sm text-slate-500 mt-1">Try adjusting your search terms or filter selection.</p>
+          <h3 className="text-lg font-bold text-slate-800 dark:text-white">No matching programs found</h3>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Try adjusting your search terms or filter selection.</p>
           <Button variant="secondary" size="sm" className="mt-4" onClick={() => { setSearchQuery(''); setSelectedCategory('all'); }}>
             Reset Filters
           </Button>

@@ -95,7 +95,7 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Full Name */}
           <div>
-            <label htmlFor="demo-fullname" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+            <label htmlFor="demo-fullname" className="block text-xs font-semibold text-slate-700 dark:text-slate-350 uppercase tracking-wider mb-1.5">
               Full Name *
             </label>
             <div className="relative">
@@ -106,8 +106,8 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                 placeholder="Sarah Jenkins"
-                className={`w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all ${
-                  errors.fullName ? 'border-rose-400 bg-rose-50/20' : 'border-slate-200'
+                className={`w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white dark:focus:bg-slate-900 text-slate-900 dark:text-white transition-all ${
+                  errors.fullName ? 'border-rose-400 bg-rose-50/20 dark:bg-rose-950/20' : 'border-slate-200 dark:border-slate-700'
                 }`}
               />
             </div>
@@ -116,7 +116,7 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
 
           {/* Work Email */}
           <div>
-            <label htmlFor="demo-email" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+            <label htmlFor="demo-email" className="block text-xs font-semibold text-slate-700 dark:text-slate-350 uppercase tracking-wider mb-1.5">
               Work Email *
             </label>
             <div className="relative">
@@ -127,8 +127,8 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
                 value={formData.workEmail}
                 onChange={(e) => setFormData({ ...formData, workEmail: e.target.value })}
                 placeholder="sarah@company.com"
-                className={`w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all ${
-                  errors.workEmail ? 'border-rose-400 bg-rose-50/20' : 'border-slate-200'
+                className={`w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white dark:focus:bg-slate-900 text-slate-900 dark:text-white transition-all ${
+                  errors.workEmail ? 'border-rose-400 bg-rose-50/20 dark:bg-rose-950/20' : 'border-slate-200 dark:border-slate-700'
                 }`}
               />
             </div>
@@ -137,7 +137,7 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
 
           {/* Company Name */}
           <div>
-            <label htmlFor="demo-company" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+            <label htmlFor="demo-company" className="block text-xs font-semibold text-slate-700 dark:text-slate-350 uppercase tracking-wider mb-1.5">
               Company Name *
             </label>
             <div className="relative">
@@ -148,8 +148,8 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
                 value={formData.companyName}
                 onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
                 placeholder="Acme Tech Inc."
-                className={`w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all ${
-                  errors.companyName ? 'border-rose-400 bg-rose-50/20' : 'border-slate-200'
+                className={`w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white dark:focus:bg-slate-900 text-slate-900 dark:text-white transition-all ${
+                  errors.companyName ? 'border-rose-400 bg-rose-50/20 dark:bg-rose-950/20' : 'border-slate-200 dark:border-slate-700'
                 }`}
               />
             </div>
@@ -158,7 +158,7 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
 
           {/* Phone */}
           <div>
-            <label htmlFor="demo-phone" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+            <label htmlFor="demo-phone" className="block text-xs font-semibold text-slate-700 dark:text-slate-350 uppercase tracking-wider mb-1.5">
               Phone Number *
             </label>
             <div className="relative">
@@ -169,8 +169,8 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 placeholder="+1 (555) 019-2834"
-                className={`w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all ${
-                  errors.phone ? 'border-rose-400 bg-rose-50/20' : 'border-slate-200'
+                className={`w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white dark:focus:bg-slate-900 text-slate-900 dark:text-white transition-all ${
+                  errors.phone ? 'border-rose-400 bg-rose-50/20 dark:bg-rose-950/20' : 'border-slate-200 dark:border-slate-700'
                 }`}
               />
             </div>
@@ -179,7 +179,7 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
 
           {/* Team Size */}
           <div>
-            <label htmlFor="demo-teamsize" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+            <label htmlFor="demo-teamsize" className="block text-xs font-semibold text-slate-700 dark:text-slate-350 uppercase tracking-wider mb-1.5">
               Team / Learner Count
             </label>
             <div className="relative">
@@ -188,19 +188,19 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
                 id="demo-teamsize"
                 value={formData.teamSize}
                 onChange={(e) => setFormData({ ...formData, teamSize: e.target.value })}
-                className="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all appearance-none cursor-pointer"
+                className="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white dark:focus:bg-slate-900 transition-all appearance-none cursor-pointer"
               >
-                <option value="10-50">10 - 50 employees</option>
-                <option value="50-200">50 - 200 employees</option>
-                <option value="200-1000">200 - 1,000 employees</option>
-                <option value="1000+">1,000+ Enterprise employees</option>
+                <option value="10-50" className="dark:bg-slate-800 text-slate-900 dark:text-white">10 - 50 employees</option>
+                <option value="50-200" className="dark:bg-slate-800 text-slate-900 dark:text-white">50 - 200 employees</option>
+                <option value="200-1000" className="dark:bg-slate-800 text-slate-900 dark:text-white">200 - 1,000 employees</option>
+                <option value="1000+" className="dark:bg-slate-800 text-slate-900 dark:text-white">1,000+ Enterprise employees</option>
               </select>
             </div>
           </div>
 
           {/* Preferred Date */}
           <div>
-            <label htmlFor="demo-date" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+            <label htmlFor="demo-date" className="block text-xs font-semibold text-slate-700 dark:text-slate-350 uppercase tracking-wider mb-1.5">
               Preferred Demo Date
             </label>
             <div className="relative">
@@ -210,7 +210,7 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
                 type="date"
                 value={formData.preferredDate}
                 onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
-                className="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all"
+                className="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white dark:focus:bg-slate-900 transition-all"
               />
             </div>
           </div>
@@ -218,28 +218,28 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
 
         {/* Interested Program */}
         <div>
-          <label htmlFor="demo-program" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+          <label htmlFor="demo-program" className="block text-xs font-semibold text-slate-700 dark:text-slate-350 uppercase tracking-wider mb-1.5">
             Primary Area of Interest
           </label>
           <select
             id="demo-program"
             value={formData.interestedProgram}
             onChange={(e) => setFormData({ ...formData, interestedProgram: e.target.value })}
-            className="w-full px-3 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all cursor-pointer"
+            className="w-full px-3 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white dark:focus:bg-slate-900 transition-all cursor-pointer"
           >
-            <option value="Enterprise Executive AI Transformation">Enterprise Executive AI & Generative AI Transformation</option>
-            <option value="Advanced Applied Data Science">Advanced Applied Data Science & Predictive Analytics</option>
-            <option value="Multi-Cloud Architecture">Multi-Cloud Architecture & DevSecOps Mastery</option>
-            <option value="Full Stack Engineering">Full Stack Engineering & Microservices Scaling</option>
-            <option value="Product Management & AI">Strategic Product Management & AI Innovation</option>
-            <option value="Cybersecurity & Threat Intelligence">Enterprise Cybersecurity & Threat Intelligence</option>
-            <option value="Custom Workforce Upskilling">Custom Customized Enterprise Curriculum</option>
+            <option value="Enterprise Executive AI Transformation" className="dark:bg-slate-800 text-slate-900 dark:text-white">Enterprise Executive AI & Generative AI Transformation</option>
+            <option value="Advanced Applied Data Science" className="dark:bg-slate-800 text-slate-900 dark:text-white">Advanced Applied Data Science & Predictive Analytics</option>
+            <option value="Multi-Cloud Architecture" className="dark:bg-slate-800 text-slate-900 dark:text-white">Multi-Cloud Architecture & DevSecOps Mastery</option>
+            <option value="Full Stack Engineering" className="dark:bg-slate-800 text-slate-900 dark:text-white">Full Stack Engineering & Microservices Scaling</option>
+            <option value="Product Management & AI" className="dark:bg-slate-800 text-slate-900 dark:text-white">Strategic Product Management & AI Innovation</option>
+            <option value="Cybersecurity & Threat Intelligence" className="dark:bg-slate-800 text-slate-900 dark:text-white">Enterprise Cybersecurity & Threat Intelligence</option>
+            <option value="Custom Workforce Upskilling" className="dark:bg-slate-800 text-slate-900 dark:text-white">Custom Customized Enterprise Curriculum</option>
           </select>
         </div>
 
         {/* Notes / Message */}
         <div>
-          <label htmlFor="demo-message" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+          <label htmlFor="demo-message" className="block text-xs font-semibold text-slate-700 dark:text-slate-350 uppercase tracking-wider mb-1.5">
             Specific Requirements / Goals (Optional)
           </label>
           <textarea
@@ -248,7 +248,7 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
             placeholder="Tell us about your team's tech stack, current skill gaps, or rollout timeline..."
-            className="w-full p-3 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all"
+            className="w-full p-3 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white dark:focus:bg-slate-900 transition-all"
           />
         </div>
 
@@ -263,7 +263,7 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
           >
             {isSubmitting ? 'Booking Demo...' : 'Confirm Demo Reservation'}
           </Button>
-          <p className="text-center text-xs text-slate-400 mt-3">
+          <p className="text-center text-xs text-slate-400 dark:text-slate-500 mt-3">
             🔒 Your information is secure. We never share enterprise contact details with third parties.
           </p>
         </div>

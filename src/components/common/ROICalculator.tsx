@@ -50,7 +50,7 @@ export const ROICalculator: React.FC<ROICalculatorProps> = ({
   };
 
   return (
-    <Card padding="xl" className="border-2 border-blue-100 shadow-xl bg-gradient-to-br from-white via-blue-50/20 to-white">
+    <Card padding="xl" className="border-2 border-blue-100 dark:border-slate-800 shadow-xl bg-gradient-to-br from-white via-blue-50/20 to-white dark:from-slate-900 dark:via-slate-905/30 dark:to-slate-900">
       <div className="flex items-center gap-3 mb-6">
         <div className="p-3 bg-blue-600 text-white rounded-xl shadow-md">
           <Calculator className="w-6 h-6" />
@@ -59,7 +59,7 @@ export const ROICalculator: React.FC<ROICalculatorProps> = ({
           <Badge variant="blue" size="sm">
             Interactive Enterprise Tool
           </Badge>
-          <h3 className="text-2xl font-bold text-slate-900 mt-1">
+          <h3 className="text-2xl font-bold text-slate-900 dark:text-white mt-1">
             Enterprise Workforce ROI Calculator
           </h3>
         </div>
@@ -71,11 +71,11 @@ export const ROICalculator: React.FC<ROICalculatorProps> = ({
           {/* Team Size */}
           <div>
             <div className="flex justify-between items-center mb-2">
-              <label className="text-sm font-bold text-slate-800 flex items-center gap-2">
+              <label className="text-sm font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
                 <Users className="w-4 h-4 text-blue-600" />
                 <span>Team / Workforce Size</span>
               </label>
-              <span className="text-base font-extrabold text-blue-600 bg-blue-50 px-3 py-1 rounded-lg">
+              <span className="text-base font-extrabold text-blue-600 bg-blue-50 dark:bg-blue-950/40 px-3 py-1 rounded-lg">
                 {teamSize.toLocaleString()} employees
               </span>
             </div>
@@ -86,9 +86,9 @@ export const ROICalculator: React.FC<ROICalculatorProps> = ({
               step="10"
               value={teamSize}
               onChange={(e) => setTeamSize(Number(e.target.value))}
-              className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+              className="w-full h-2.5 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-600"
             />
-            <div className="flex justify-between text-[11px] text-slate-400 mt-1 font-medium">
+            <div className="flex justify-between text-[11px] text-slate-400 dark:text-slate-500 mt-1 font-medium">
               <span>10 learners</span>
               <span>500 learners</span>
               <span>2,000 learners</span>
@@ -98,11 +98,11 @@ export const ROICalculator: React.FC<ROICalculatorProps> = ({
           {/* Average Salary */}
           <div>
             <div className="flex justify-between items-center mb-2">
-              <label className="text-sm font-bold text-slate-800 flex items-center gap-2">
+              <label className="text-sm font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
                 <DollarSign className="w-4 h-4 text-blue-600" />
                 <span>Average Employee Annual Salary</span>
               </label>
-              <span className="text-base font-extrabold text-blue-600 bg-blue-50 px-3 py-1 rounded-lg">
+              <span className="text-base font-extrabold text-blue-600 bg-blue-50 dark:bg-blue-950/40 px-3 py-1 rounded-lg">
                 {formatCurrency(avgSalary)}
               </span>
             </div>
@@ -113,9 +113,9 @@ export const ROICalculator: React.FC<ROICalculatorProps> = ({
               step="5000"
               value={avgSalary}
               onChange={(e) => setAvgSalary(Number(e.target.value))}
-              className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+              className="w-full h-2.5 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-600"
             />
-            <div className="flex justify-between text-[11px] text-slate-400 mt-1 font-medium">
+            <div className="flex justify-between text-[11px] text-slate-400 dark:text-slate-500 mt-1 font-medium">
               <span>$50,000</span>
               <span>$120,000</span>
               <span>$220,000</span>
@@ -125,11 +125,11 @@ export const ROICalculator: React.FC<ROICalculatorProps> = ({
           {/* Turnover Rate */}
           <div>
             <div className="flex justify-between items-center mb-2">
-              <label className="text-sm font-bold text-slate-800 flex items-center gap-2">
+              <label className="text-sm font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
                 <TrendingUp className="w-4 h-4 text-blue-600" />
                 <span>Estimated Annual Turnover Rate</span>
               </label>
-              <span className="text-base font-extrabold text-blue-600 bg-blue-50 px-3 py-1 rounded-lg">
+              <span className="text-base font-extrabold text-blue-600 bg-blue-50 dark:bg-blue-950/40 px-3 py-1 rounded-lg">
                 {turnoverRate}%
               </span>
             </div>
@@ -140,9 +140,9 @@ export const ROICalculator: React.FC<ROICalculatorProps> = ({
               step="1"
               value={turnoverRate}
               onChange={(e) => setTurnoverRate(Number(e.target.value))}
-              className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+              className="w-full h-2.5 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-600"
             />
-            <div className="flex justify-between text-[11px] text-slate-400 mt-1 font-medium">
+            <div className="flex justify-between text-[11px] text-slate-400 dark:text-slate-500 mt-1 font-medium">
               <span>5% (Low)</span>
               <span>18% (Avg)</span>
               <span>35% (High)</span>
@@ -151,7 +151,7 @@ export const ROICalculator: React.FC<ROICalculatorProps> = ({
         </div>
 
         {/* Calculated Results Summary Box */}
-        <div className="lg:col-span-5 bg-slate-900 text-white p-6 rounded-2xl shadow-2xl relative overflow-hidden">
+        <div className="lg:col-span-5 bg-slate-900 dark:bg-slate-950 text-white p-6 rounded-2xl shadow-2xl relative overflow-hidden border dark:border-slate-800">
           <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/20 rounded-full blur-2xl" />
 
           <p className="text-xs uppercase font-bold tracking-widest text-blue-400 mb-1">
@@ -171,7 +171,7 @@ export const ROICalculator: React.FC<ROICalculatorProps> = ({
             </span>
           </div>
 
-          <div className="space-y-2.5 pt-4 border-t border-slate-800 text-xs text-slate-300">
+          <div className="space-y-2.5 pt-4 border-t border-slate-800 dark:border-slate-900 text-xs text-slate-300 dark:text-slate-400">
             <div className="flex justify-between">
               <span>Productivity Efficiency Gains:</span>
               <span className="font-bold text-white">{formatCurrency(calculations.productivityGain)}</span>
@@ -180,7 +180,7 @@ export const ROICalculator: React.FC<ROICalculatorProps> = ({
               <span>Attrition / Retention Savings:</span>
               <span className="font-bold text-white">{formatCurrency(calculations.turnoverSavings)}</span>
             </div>
-            <div className="flex justify-between text-slate-400 pt-1 border-t border-slate-800/60">
+            <div className="flex justify-between text-slate-400 dark:text-slate-500 pt-1 border-t border-slate-800/60 dark:border-slate-900/60">
               <span>Est. Accredian Investment:</span>
               <span>{formatCurrency(calculations.estimatedInvestment)}</span>
             </div>
