@@ -148,7 +148,7 @@ export const Hero: React.FC<HeroProps> = ({
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white rounded-2xl shadow-2xl border border-slate-200 p-6 relative overflow-hidden"
+              className="bg-white rounded-2xl shadow-2xl border border-slate-200 p-6 relative"
             >
               {/* Card Header */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-100">
