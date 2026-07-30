@@ -83,20 +83,20 @@ For Vercel serverless deployments, `vercel.json` routes static requests to `/dis
 ```json
 {
   "version": 2,
-  "builds": [
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "routes": [
     {
-      "src": "server.ts",
-      "use": "@vercel/node"
+      "src": "/api/(.*)",
+      "dest": "/api/index.ts"
     },
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
-  ],
-  "routes": [
-    { "src": "/api/(.*)", "dest": "server.ts" },
-    { "src": "/(.*)", "dest": "/dist/$1" }
   ]
 }
 ```

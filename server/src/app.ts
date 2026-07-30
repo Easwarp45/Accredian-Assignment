@@ -11,8 +11,12 @@ import apiRouter from './routes';
 import { apiRateLimiter } from './middlewares/rateLimiter.middleware';
 import { notFoundHandler } from './middlewares/notFound.middleware';
 import { errorHandler } from './middlewares/error.middleware';
+import { connectDatabase } from './config/database';
 
 const app = express();
+
+// Initialize Database connection (async bootstrap for serverless environments)
+connectDatabase();
 
 // Disable fingerprinting header
 app.disable('x-powered-by');

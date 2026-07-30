@@ -22,6 +22,10 @@ mongoose.connection.on('disconnected', () => {
 });
 
 export async function connectDatabase(): Promise<boolean> {
+  if (mongoose.connection.readyState === 1 || mongoose.connection.readyState === 2) {
+    return isMongoConnected;
+  }
+
   if (!config.mongoUri) {
     logger.info('MONGODB_URI not provided. Utilizing high-performance persistent in-memory data layer.');
     return false;
