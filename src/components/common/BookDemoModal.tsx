@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Modal } from './ui/Modal';
-import { Button } from './ui/Button';
-import { DemoRequestData } from '../types';
+import { Modal } from '../ui/Modal';
+import { Button } from '../ui/Button';
+import { DemoRequestData } from '../../types';
 import { Building2, Mail, Phone, User, Users, Calendar, CheckCircle, Loader2 } from 'lucide-react';
 
 interface BookDemoModalProps {
@@ -95,12 +95,13 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Full Name */}
           <div>
-            <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+            <label htmlFor="demo-fullname" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
               Full Name *
             </label>
             <div className="relative">
               <User className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
               <input
+                id="demo-fullname"
                 type="text"
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
@@ -115,12 +116,13 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
 
           {/* Work Email */}
           <div>
-            <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+            <label htmlFor="demo-email" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
               Work Email *
             </label>
             <div className="relative">
               <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
               <input
+                id="demo-email"
                 type="email"
                 value={formData.workEmail}
                 onChange={(e) => setFormData({ ...formData, workEmail: e.target.value })}
@@ -135,12 +137,13 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
 
           {/* Company Name */}
           <div>
-            <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+            <label htmlFor="demo-company" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
               Company Name *
             </label>
             <div className="relative">
               <Building2 className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
               <input
+                id="demo-company"
                 type="text"
                 value={formData.companyName}
                 onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
@@ -155,12 +158,13 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
 
           {/* Phone */}
           <div>
-            <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+            <label htmlFor="demo-phone" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
               Phone Number *
             </label>
             <div className="relative">
               <Phone className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
               <input
+                id="demo-phone"
                 type="tel"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -175,12 +179,13 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
 
           {/* Team Size */}
           <div>
-            <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+            <label htmlFor="demo-teamsize" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
               Team / Learner Count
             </label>
             <div className="relative">
               <Users className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
               <select
+                id="demo-teamsize"
                 value={formData.teamSize}
                 onChange={(e) => setFormData({ ...formData, teamSize: e.target.value })}
                 className="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all appearance-none cursor-pointer"
@@ -195,12 +200,13 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
 
           {/* Preferred Date */}
           <div>
-            <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+            <label htmlFor="demo-date" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
               Preferred Demo Date
             </label>
             <div className="relative">
               <Calendar className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
               <input
+                id="demo-date"
                 type="date"
                 value={formData.preferredDate}
                 onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
@@ -212,10 +218,11 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
 
         {/* Interested Program */}
         <div>
-          <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+          <label htmlFor="demo-program" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
             Primary Area of Interest
           </label>
           <select
+            id="demo-program"
             value={formData.interestedProgram}
             onChange={(e) => setFormData({ ...formData, interestedProgram: e.target.value })}
             className="w-full px-3 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all cursor-pointer"
@@ -232,10 +239,11 @@ export const BookDemoModal: React.FC<BookDemoModalProps> = ({
 
         {/* Notes / Message */}
         <div>
-          <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+          <label htmlFor="demo-message" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
             Specific Requirements / Goals (Optional)
           </label>
           <textarea
+            id="demo-message"
             rows={3}
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}

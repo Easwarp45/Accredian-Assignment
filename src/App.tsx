@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navbar } from './sections/Navbar';
+import { Navbar } from './components/layout/Navbar';
 import { Hero } from './sections/Hero';
 import { TrustedCompanies } from './sections/TrustedCompanies';
 import { Features } from './sections/Features';
@@ -9,9 +9,9 @@ import { Statistics } from './sections/Statistics';
 import { Testimonials } from './sections/Testimonials';
 import { FAQSection } from './sections/FAQSection';
 import { CTA } from './sections/CTA';
-import { Footer } from './sections/Footer';
-import { BookDemoModal } from './components/BookDemoModal';
-import { ProgramCatalogModal } from './components/ProgramCatalogModal';
+import { Footer } from './components/layout/Footer';
+import { BookDemoModal } from './components/common/BookDemoModal';
+import { ProgramCatalogModal } from './components/common/ProgramCatalogModal';
 import { Toast } from './components/ui/Toast';
 import { Program } from './types';
 

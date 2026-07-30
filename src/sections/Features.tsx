@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Section } from '../components/ui/Section';
+import { Section } from '../components/layout/Section';
 import { ENTERPRISE_FEATURES } from '../constants/content';
-import { FeatureCard } from '../components/FeatureCard';
+import { FeatureCard } from '../components/common/FeatureCard';
 import { Feature } from '../types';
 import { Badge } from '../components/ui/Badge';
 

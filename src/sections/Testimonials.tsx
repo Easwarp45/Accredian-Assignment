@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Section } from '../components/ui/Section';
+import { Section } from '../components/layout/Section';
 import { TESTIMONIALS } from '../constants/content';
-import { TestimonialCard } from '../components/TestimonialCard';
+import { TestimonialCard } from '../components/common/TestimonialCard';
 import { Badge } from '../components/ui/Badge';
 
 export const Testimonials: React.FC = () => {

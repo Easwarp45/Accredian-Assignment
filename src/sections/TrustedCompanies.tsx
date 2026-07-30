@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Section } from '../components/ui/Section';
+import { Section } from '../components/layout/Section';
 import { TRUSTED_COMPANIES } from '../constants/content';
 import { Card } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';

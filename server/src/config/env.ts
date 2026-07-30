@@ -6,6 +6,7 @@ export const config = {
   nodeEnv: process.env.NODE_ENV || 'development',
   mongoUri: process.env.MONGODB_URI || '',
   appUrl: process.env.APP_URL || 'http://localhost:3000',
+  corsAllowedOrigins: process.env.CORS_ALLOWED_ORIGINS || '',
   rateLimit: {
     windowMs: 15 * 60 * 1000, // 15 minutes
     max: 200 // limit each IP to 200 requests per windowMs

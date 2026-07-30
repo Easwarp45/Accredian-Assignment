@@ -84,6 +84,8 @@ export interface IDemoRequest {
   designation?: string;
   phone: string;
   organizationSize?: string;
+  teamSize?: string;
+  interestedProgram?: string;
   preferredDate?: string;
   preferredTime?: string;
   message?: string;

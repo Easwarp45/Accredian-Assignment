@@ -13,4 +13,6 @@ const FAQSchema = new Schema<IFAQDocument>(
   { timestamps: true }
 );
 
+FAQSchema.index({ question: 'text', answer: 'text' });
+
 export const FAQModel = mongoose.models.FAQ || mongoose.model<IFAQDocument>('FAQ', FAQSchema);

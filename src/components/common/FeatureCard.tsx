@@ -1,7 +1,7 @@
 import React from 'react';
-import { Feature } from '../types';
-import { Card } from './ui/Card';
-import { Badge } from './ui/Badge';
+import { Feature } from '../../types';
+import { Card } from '../ui/Card';
+import { Badge } from '../ui/Badge';
 import {
   Users,
   TrendingUp,

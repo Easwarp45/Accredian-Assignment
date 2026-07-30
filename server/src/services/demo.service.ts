@@ -3,6 +3,7 @@ import { store } from './store.service';
 import { getIsMongoConnected } from '../config/database';
 import { DemoRequestInput } from '../validators/demo.validator';
 import { IDemoRequest } from '../types';
+import { logger } from '../utils/logger';
 
 export class DemoService {
   async createDemoRequest(input: DemoRequestInput): Promise<IDemoRequest> {
@@ -12,13 +13,17 @@ export class DemoService {
     const referenceId = `ACC-DEMO-${refNum}`;
 
     if (getIsMongoConnected()) {
-      const doc = await DemoRequestModel.create({
-        ...input,
-        id,
-        referenceId,
-        createdAt
-      });
-      return doc.toObject() as IDemoRequest;
+      try {
+        const doc = await DemoRequestModel.create({
+          ...input,
+          id,
+          referenceId,
+          createdAt
+        });
+        return doc.toObject() as IDemoRequest;
+      } catch (error: any) {
+        logger.error(`Failed to save demo request to MongoDB (${error.message || error}). Falling back to in-memory store.`);
+      }
     }
 
     return store.addDemoRequest(input);
@@ -26,8 +31,12 @@ export class DemoService {
 
   async getAllDemoRequests(): Promise<IDemoRequest[]> {
     if (getIsMongoConnected()) {
-      const docs = await DemoRequestModel.find().sort({ createdAt: -1 }).lean();
-      return docs as unknown as IDemoRequest[];
+      try {
+        const docs = await DemoRequestModel.find().sort({ createdAt: -1 }).lean();
+        return docs as unknown as IDemoRequest[];
+      } catch (error: any) {
+        logger.error(`Failed to retrieve demo requests from MongoDB (${error.message || error}). Falling back to in-memory store.`);
+      }
     }
     return store.getDemoRequests();
   }

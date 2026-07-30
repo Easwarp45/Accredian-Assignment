@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Section } from '../components/ui/Section';
+import { Section } from '../components/layout/Section';
 import { FAQ_ITEMS } from '../constants/content';
-import { AccordionItem } from '../components/AccordionItem';
+import { AccordionItem } from '../components/common/AccordionItem';
 import { Badge } from '../components/ui/Badge';
 import { Button } from '../components/ui/Button';
 import { Search, MessageSquare, PhoneCall } from 'lucide-react';
@@ -49,6 +49,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onBookDemo }) => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search questions (e.g., pricing, SSO, certifications)..."
+            aria-label="Search frequently asked questions"
             className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>

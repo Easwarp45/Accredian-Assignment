@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Statistic } from '../types';
-import { Card } from './ui/Card';
-import { Badge } from './ui/Badge';
+import { Statistic } from '../../types';
+import { Card } from '../ui/Card';
+import { Badge } from '../ui/Badge';
 import { TrendingUp } from 'lucide-react';
 
 interface StatisticCardProps {

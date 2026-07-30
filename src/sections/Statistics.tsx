@@ -1,7 +1,7 @@
 import React from 'react';
-import { Section } from '../components/ui/Section';
+import { Section } from '../components/layout/Section';
 import { IMPACT_STATISTICS } from '../constants/content';
-import { StatisticCard } from '../components/StatisticCard';
+import { StatisticCard } from '../components/common/StatisticCard';
 import { Badge } from '../components/ui/Badge';
 
 export const Statistics: React.FC = () => {

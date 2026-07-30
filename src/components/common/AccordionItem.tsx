@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
-import { FAQItem } from '../types';
-import { cn } from '../utils/cn';
+import { FAQItem } from '../../types';
+import { cn } from '../../utils/cn';
 
 interface AccordionItemProps {
   item: FAQItem;

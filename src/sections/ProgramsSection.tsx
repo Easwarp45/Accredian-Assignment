@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Section } from '../components/ui/Section';
+import { Section } from '../components/layout/Section';
 import { ENTERPRISE_PROGRAMS } from '../constants/content';
 import { Card } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
@@ -60,6 +60,7 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search by skill (e.g., GenAI, Kubernetes, MLOps, Microservices)..."
+            aria-label="Search learning programs by skill"
             className="w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-xl shadow-sm text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>

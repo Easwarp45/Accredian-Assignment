@@ -136,6 +136,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectSection, onBookDemo, onT
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
                   placeholder="executive@company.com"
+                  aria-label="Newsletter email address"
                   className="w-full pl-9 pr-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-xs text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>

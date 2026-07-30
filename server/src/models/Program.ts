@@ -23,4 +23,6 @@ const ProgramSchema = new Schema<IProgramDocument>(
   { timestamps: true }
 );
 
+ProgramSchema.index({ category: 1 });
+
 export const ProgramModel = mongoose.models.Program || mongoose.model<IProgramDocument>('Program', ProgramSchema);

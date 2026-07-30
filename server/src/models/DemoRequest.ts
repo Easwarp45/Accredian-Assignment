@@ -13,6 +13,8 @@ const DemoRequestSchema = new Schema<IDemoRequestDocument>(
     designation: { type: String },
     phone: { type: String, required: true },
     organizationSize: { type: String },
+    teamSize: { type: String },
+    interestedProgram: { type: String },
     preferredDate: { type: String },
     preferredTime: { type: String },
     message: { type: String },

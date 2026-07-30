@@ -106,11 +106,14 @@ npm run build
 npm start
 ```
 
----
-
 ## 🧪 Documentation Artifacts
-- **[API Documentation](API.md)**
-- **[Database Guide](DATABASE.md)**
-- **[Environment Variables](ENVIRONMENT.md)**
-- **[REST Client Requests](requests.http)**
-- **[Postman Collection](postman_collection.json)**
+
+Detailed documentation can be found in the [docs/](file:///d:/app%20development/Accredian%20Assignment/docs) directory:
+- **[Project Repository Structure](docs/PROJECT_STRUCTURE.md)**
+- **[Security Hardening & Audit Summary](docs/SECURITY.md)**
+- **[API Reference Manual](docs/API.md)**
+- **[Database Architecture & Fallbacks](docs/DATABASE.md)**
+- **[Production Deployment Guide](docs/DEPLOYMENT.md)**
+- **[Environment Variables Specification](docs/ENVIRONMENT.md)**
+- **[REST Client Requests](docs/requests.http)**
+- **[Postman Collection](docs/postman_collection.json)**

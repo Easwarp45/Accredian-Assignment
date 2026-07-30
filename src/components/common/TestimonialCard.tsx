@@ -1,8 +1,8 @@
 import React from 'react';
-import { Testimonial } from '../types';
-import { Card } from './ui/Card';
+import { Testimonial } from '../../types';
+import { Card } from '../ui/Card';
 import { Star, Quote } from 'lucide-react';
-import { Badge } from './ui/Badge';
+import { Badge } from '../ui/Badge';
 
 interface TestimonialCardProps {
   testimonial: Testimonial;

@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
-import { Card } from './ui/Card';
-import { Button } from './ui/Button';
-import { Badge } from './ui/Badge';
+import { Card } from '../ui/Card';
+import { Button } from '../ui/Button';
+import { Badge } from '../ui/Badge';
 import { Calculator, DollarSign, TrendingUp, Users, ShieldCheck, ArrowRight } from 'lucide-react';
 
 interface ROICalculatorProps {

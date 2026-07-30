@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Modal } from './ui/Modal';
-import { Button } from './ui/Button';
-import { Badge } from './ui/Badge';
-import { Program } from '../types';
+import { Modal } from '../ui/Modal';
+import { Button } from '../ui/Button';
+import { Badge } from '../ui/Badge';
+import { Program } from '../../types';
 import { Clock, Layers, Users, Star, CheckCircle2, FileText, ArrowRight } from 'lucide-react';
 
 interface ProgramCatalogModalProps {
@@ -130,6 +130,7 @@ export const ProgramCatalogModal: React.FC<ProgramCatalogModalProps> = ({
               value={emailInput}
               onChange={(e) => setEmailInput(e.target.value)}
               placeholder="work.email@company.com"
+              aria-label="Work Email Address"
               className="flex-1 px-3 py-2 text-sm bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <Button type="submit" variant="primary" size="sm" disabled={isDownloading}>

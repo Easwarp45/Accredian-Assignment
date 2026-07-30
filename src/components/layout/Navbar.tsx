@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from '../components/ui/Button';
+import { Button } from '../ui/Button';
 import { Menu, X, GraduationCap, ChevronRight, PhoneCall } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 

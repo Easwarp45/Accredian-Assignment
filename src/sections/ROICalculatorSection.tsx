@@ -1,6 +1,6 @@
 import React from 'react';
-import { Section } from '../components/ui/Section';
-import { ROICalculator } from '../components/ROICalculator';
+import { Section } from '../components/layout/Section';
+import { ROICalculator } from '../components/common/ROICalculator';
 import { Badge } from '../components/ui/Badge';
 
 interface ROICalculatorSectionProps {

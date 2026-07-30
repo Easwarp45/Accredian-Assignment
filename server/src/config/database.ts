@@ -5,6 +5,22 @@ import { seedDatabase } from '../database/seed';
 
 let isMongoConnected = false;
 
+// Dynamic connection listeners to track connection health in real-time
+mongoose.connection.on('connected', () => {
+  isMongoConnected = true;
+  logger.info('MongoDB connection established successfully.');
+});
+
+mongoose.connection.on('error', (err) => {
+  isMongoConnected = false;
+  logger.error(`MongoDB connection error: ${err.message || err}`);
+});
+
+mongoose.connection.on('disconnected', () => {
+  isMongoConnected = false;
+  logger.warn('MongoDB connection disconnected. Seamless fallback to in-memory store.');
+});
+
 export async function connectDatabase(): Promise<boolean> {
   if (!config.mongoUri) {
     logger.info('MONGODB_URI not provided. Utilizing high-performance persistent in-memory data layer.');
@@ -14,7 +30,7 @@ export async function connectDatabase(): Promise<boolean> {
   try {
     mongoose.set('strictQuery', true);
     await mongoose.connect(config.mongoUri, {
-      serverSelectionTimeoutMS: 8000
+      serverSelectionTimeoutMS: 5000 // Shorter timeout for quicker startup validation
     });
     isMongoConnected = true;
     logger.info('Successfully connected to MongoDB database!');
@@ -30,3 +46,4 @@ export async function connectDatabase(): Promise<boolean> {
 export function getIsMongoConnected(): boolean {
   return isMongoConnected;
 }
+
